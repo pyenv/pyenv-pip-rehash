@@ -18,6 +18,11 @@ Then, run `pyenv rehash`. This might be the final invokation of `pyenv rehash` f
 1. `pip install` a pip that provides executables.
 2. Marvel at how you no longer need to type `pyenv rehash`.
 
+## How It Works
+
+pyenv-pip-rehash creates special shims for `pip` commands.
+In that shim, it invokes `pyenv rehash` after `pip install`.
+
 ## History
 
 **0.0.1** (May 13, 2013)
