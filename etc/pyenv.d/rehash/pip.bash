@@ -59,7 +59,6 @@ if [ "\$program" = "python" ]; then
 fi
 
 export PYENV_ROOT="$PYENV_ROOT"
-export PYENV_ROOT="$PYENV_ROOT"
 STATUS=0
 "$(command -v pyenv)" exec "\$program" "\$@" || STATUS=\$?
 if [ "\$1" = "install" ] || [ "\$1" = "uninstall" ]; then
