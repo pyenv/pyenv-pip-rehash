@@ -20,10 +20,15 @@ set +o noclobber
 
 # If we were able to obtain a lock, register a trap to clean up the
 # pip shim when the process exits.
-trap remove_pip_shim EXIT
+trap remove_prototype_shim EXIT
+
+# Override original `remove_prototype_shim`
+remove_prototype_shim() {
+  rm -f "$PROTOTYPE_SHIM_PATH"
+  remove_pip_shim
+}
 
 remove_pip_shim() {
-  remove_prototype_shim
   rm -f "$PIP_SHIM_PATH"
 }
 
@@ -80,6 +85,7 @@ shopt -s nullglob
 # executables.
 create_pip_shim
 install_pip_shims
+remove_pip_shim
 
 # Restore the previous working directory.
 cd "$OLDPWD"
