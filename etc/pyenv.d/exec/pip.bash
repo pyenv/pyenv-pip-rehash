@@ -21,6 +21,6 @@ abs_dirname() {
 PYENV_PIP_REHASH_ROOT="$(abs_dirname "${BASH_SOURCE[0]}")/../../.."
 
 if [[ "${PYENV_COMMAND##*/}" == "pip" ]]; then
-  PYENV_COMMAND_PATH="${PYENV_PIP_REHASH_ROOT}/bin/pip"
-  PYENV_BIN_PATH="${PYENV_PIP_REHASH_ROOT}/bin"
+  PYENV_COMMAND_PATH="${PYENV_PIP_REHASH_ROOT}/libexec/pip"
+  PYENV_BIN_PATH="${PYENV_PIP_REHASH_ROOT}/libexec"
 fi
