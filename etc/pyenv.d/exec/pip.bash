@@ -18,7 +18,7 @@ abs_dirname() {
   cd "$cwd"
 }
 
-PYENV_PIP_REHASH_ROOT="$(abs_dirname "${BASH_SOURCE[0]}")/../../.."
+PYENV_PIP_REHASH_ROOT="$(abs_dirname "$(abs_dirname "${BASH_SOURCE[0]}")/../../../..")"
 
 if [ -x "${PYENV_PIP_REHASH_ROOT}/libexec/${PYENV_COMMAND##*/}" ]; then
   PYENV_COMMAND_PATH="${PYENV_PIP_REHASH_ROOT}/libexec/${PYENV_COMMAND##*/}"
