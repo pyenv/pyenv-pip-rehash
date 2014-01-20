@@ -1,5 +1,7 @@
 # pyenv-pip-rehash
 
+[![Build Status](https://travis-ci.org/yyuu/pyenv-pip-rehash.png)](https://travis-ci.org/yyuu/pyenv-pip-rehash)
+
 **Never run `pyenv rehash` again.** This pyenv plugin automatically
 runs `pyenv rehash` every time you install or uninstall a pip.
 
