@@ -27,10 +27,12 @@ abs_dirname() {
 @test "should not invoke rehash after pip freeze" {
   stub pyenv-which "pip : echo \"${TMP}/bin/pip\"" \
                    "pip : echo \"${TMP}/bin/pip\""
-  stub pyenv-rehash "echo rehashed"
   stub pip "echo \"pip \$@\""
 
   run pyenv-exec pip freeze
+
+  unstub pyenv-which
+  unstub pip
 
   assert_success
   assert_output <<EOS
@@ -47,6 +49,10 @@ EOS
 
   run pyenv-exec pip install -U tornado
 
+  unstub pyenv-which
+  unstub pyenv-rehash
+  unstub pip
+
   assert_success
   assert_output <<EOS
 PYENV_BIN_PATH=${PYENV_PIP_REHASH_ROOT}/libexec exec -a pip ${PYENV_PIP_REHASH_ROOT}/libexec/pip install -U tornado
@@ -58,10 +64,12 @@ EOS
 @test "should invoke rehash after unsuccessful pip install" {
   stub pyenv-which "pip : echo \"${TMP}/bin/pip\"" \
                    "pip : echo \"${TMP}/bin/pip\""
-  stub pyenv-rehash "echo rehashed"
   stub pip "echo \"pip \$@\"; false"
 
   run pyenv-exec pip install tornado
+
+  unstub pyenv-which
+  unstub pip
 
   assert_failure
   assert_output <<EOS
@@ -78,6 +86,10 @@ EOS
 
   run pyenv-exec pip uninstall --yes tornado
 
+  unstub pyenv-which
+  unstub pyenv-rehash
+  unstub pip
+
   assert_success
   assert_output <<EOS
 PYENV_BIN_PATH=${PYENV_PIP_REHASH_ROOT}/libexec exec -a pip ${PYENV_PIP_REHASH_ROOT}/libexec/pip uninstall --yes tornado
@@ -89,10 +101,12 @@ EOS
 @test "should not invoke rehash after unsuccessful pip uninstall" {
   stub pyenv-which "pip : echo \"${TMP}/bin/pip\"" \
                    "pip : echo \"${TMP}/bin/pip\""
-  stub pyenv-rehash "echo rehashed"
   stub pip "echo \"pip \$@\"; false"
 
   run pyenv-exec pip uninstall tornado
+
+  unstub pyenv-which
+  unstub pip
 
   assert_failure
   assert_output <<EOS
@@ -109,6 +123,10 @@ EOS
 
   run pyenv-exec easy_install tornado
 
+  unstub pyenv-which
+  unstub pyenv-rehash
+  unstub easy_install
+
   assert_success
   assert_output <<EOS
 PYENV_BIN_PATH=${PYENV_PIP_REHASH_ROOT}/libexec exec -a easy_install ${PYENV_PIP_REHASH_ROOT}/libexec/easy_install tornado
@@ -120,10 +138,12 @@ EOS
 @test "should not invoke rehash after unsuccessful easy_install" {
   stub pyenv-which "easy_install : echo \"${TMP}/bin/easy_install\"" \
                    "easy_install : echo \"${TMP}/bin/easy_install\""
-  stub pyenv-rehash "echo rehashed"
   stub easy_install "echo \"easy_install \$@\"; false"
 
   run pyenv-exec easy_install -U tornado
+
+  unstub pyenv-which
+  unstub easy_install
 
   assert_failure
   assert_output <<EOS
