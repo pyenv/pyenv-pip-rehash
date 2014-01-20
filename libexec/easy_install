@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+[ -n "$PYENV_DEBUG" ] && set -x
+
+PYENV_COMMAND_PATH="$(pyenv-which "$(basename "$0")")"
+PYENV_BIN_PATH="${PYENV_COMMAND_PATH%/*}"
+
+export PATH="${PYENV_BIN_PATH}:${PATH}"
+
+STATUS=0
+"$PYENV_COMMAND_PATH" "$@" || STATUS="$?"
+
+# Run `pyenv-rehash` after a successful installation.
+if [ "$STATUS" == "0" ]; then
+  pyenv-rehash
+fi
+
+exit "$STATUS"
