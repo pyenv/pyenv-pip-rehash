@@ -27,6 +27,12 @@ In that shim, it invokes `pyenv rehash` after `pip install`.
 
 ## History
 
+**0.0.3** (Jan 22, 2014)
+
+* Rewrite with using `exec` hook of `pyenv`
+* Support `easy_install` in addition to `pip`
+* Add tests
+
 **0.0.2** (Jun 14, 2013)
 
 * Surely remove `${PIP_SHIM_PATH}` on exit
