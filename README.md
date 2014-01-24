@@ -19,7 +19,7 @@ Make sure you have pyenv 0.2.0 or later, then run:
 ## How It Works
 
 pyenv-pip-rehash hooks every invokation of `pip` commands via `pyenv`.
-If the second argument for `pip` is `install` or `uninstall`, it invokes `pyenv rehash` automatically.
+If the first argument for `pip` is `install` or `uninstall`, it invokes `pyenv rehash` automatically.
 
 ## History
 
