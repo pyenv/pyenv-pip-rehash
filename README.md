@@ -3,17 +3,13 @@
 [![Build Status](https://travis-ci.org/yyuu/pyenv-pip-rehash.png)](https://travis-ci.org/yyuu/pyenv-pip-rehash)
 
 **Never run `pyenv rehash` again.** This pyenv plugin automatically
-runs `pyenv rehash` every time you install or uninstall a pip.
+runs `pyenv rehash` every time you install or uninstall packages with using `pip`.
 
 ## Installation
 
 Make sure you have pyenv 0.2.0 or later, then run:
 
     git clone https://github.com/yyuu/pyenv-pip-rehash.git ~/.pyenv/plugins/pyenv-pip-rehash
-
-Then, run `pyenv rehash`. This might be the final invokation of `pyenv rehash` for you.
-
-    pyenv rehash
 
 ## Usage
 
@@ -22,8 +18,8 @@ Then, run `pyenv rehash`. This might be the final invokation of `pyenv rehash` f
 
 ## How It Works
 
-pyenv-pip-rehash creates special shims for `pip` commands.
-In that shim, it invokes `pyenv rehash` after `pip install`.
+pyenv-pip-rehash hooks every invokation of `pip` commands via `pyenv`.
+If the second argument for `pip` is `install` or `uninstall`, it invokes `pyenv rehash` automatically.
 
 ## History
 
