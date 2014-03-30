@@ -23,6 +23,10 @@ If the first argument for `pip` is `install` or `uninstall`, it invokes `pyenv r
 
 ## History
 
+**0.0.4** (Mar 30, 2014)
+
+* Fix infinite loop issue with `system` version (yyuu/pyenv#146)
+
 **0.0.3** (Jan 22, 2014)
 
 * Rewrite with using `exec` hook of `pyenv`
