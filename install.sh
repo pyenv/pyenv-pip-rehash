@@ -1,7 +1,7 @@
 #!/bin/sh
 # Usage: PREFIX=/usr/local ./install.sh
 #
-# Installs pyenv-virtualenv under $PREFIX.
+# Installs pyenv-pip-rehash under $PREFIX.
 
 set -e
 

@@ -1,4 +1,4 @@
-##!/usr/bin/env bash
+#!/usr/bin/env bash
 
 resolve_link() {
   $(type -p greadlink readlink | head -1) "$1"
