@@ -6,9 +6,30 @@
 
 ## Installation
 
+### Installing as a pyenv plugin
+
 Make sure you have pyenv 0.2.0 or later, then run:
 
     git clone https://github.com/yyuu/pyenv-pip-rehash.git ~/.pyenv/plugins/pyenv-pip-rehash
+
+
+### Installing with Homebrew (for OS X users)
+
+Mac OS X users can install pyenv-pip-rehash with the
+[Homebrew](http://brew.sh) package manager.
+
+*This is the recommended method of installation if you installed pyenv
+ with Homebrew.*
+
+```
+$ brew install homebrew/boneyard/pyenv-pip-rehash
+```
+
+Or, if you would like to install the latest development release:
+
+```
+$ brew install --HEAD homebrew/boneyard/pyenv-pip-rehash
+```
 
 ## Usage
 
