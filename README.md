@@ -22,13 +22,13 @@ Mac OS X users can install pyenv-pip-rehash with the
  with Homebrew.*
 
 ```
-$ brew install pyenv-pip-rehash
+$ brew install homebrew/boneyard/pyenv-pip-rehash
 ```
 
 Or, if you would like to install the latest development release:
 
 ```
-$ brew install --HEAD pyenv-pip-rehash
+$ brew install --HEAD homebrew/boneyard/pyenv-pip-rehash
 ```
 
 ## Usage
