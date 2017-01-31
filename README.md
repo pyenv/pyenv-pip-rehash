@@ -10,7 +10,7 @@
 
 Make sure you have pyenv 0.2.0 or later, then run:
 
-    git clone https://github.com/yyuu/pyenv-pip-rehash.git ~/.pyenv/plugins/pyenv-pip-rehash
+    git clone https://github.com/yyuu/pyenv-pip-rehash.git $(pyenv root)/plugins/pyenv-pip-rehash
 
 
 ### Installing with Homebrew (for OS X users)
