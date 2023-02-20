@@ -1,8 +1,6 @@
+**Since Pyenv v20141211, this plugin's functionality is present in the core Pyenv so this plugin is no longer needed.**
+
 # pyenv-pip-rehash
-
-[![Build Status](https://travis-ci.org/yyuu/pyenv-pip-rehash.png)](https://travis-ci.org/yyuu/pyenv-pip-rehash)
-
-**NOTICE** from pyenv v20141211, it bundles built-in `pip-rehash` feature. You don't need to install this plugin anymore.
 
 ## Installation
 
